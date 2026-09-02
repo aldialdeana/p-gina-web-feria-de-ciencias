@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto del Reloj Solar</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header class="banner">
+        <img src="reloj solar img.jfif" alt="Banner superior">
+    </header>
+
+    <nav class="menu-navegacion">
+        <button onclick="location.href='#seccion1'">Inicio</button>
+        <button onclick="location.href='#calendario'">Calendario</button>
+        <button onclick="location.href='https://www.google.com'">
+            Ir a Google
+        </button>
+    </nav>
+
+    <main>
+
+        <h1 class="titulo">PROYECTO DEL RELOJ SOLAR</h1>
+        <h2 class="titulo">5TO AÑO</h2>
+
+        <section id="seccion1">
+            <h3>Sección de actividades</h3>
+
+            <ol>
+                <li>Ubicar el reloj solar</li>
+                <li>Observar la sombra</li>
+                <li>Registrar la hora</li>
+            </ol>
+
+            <p>Hola Mundo</p>
+        </section>
+
+        <section class="intro-section">
+            <h2>Nuestro Proyecto</h2>
+
+            <p>
+                Este proyecto relaciona la trigonometría con el funcionamiento de los relojes solares.
+                Al resolver correctamente los ejercicios, la sombra del reloj cambiará de posición.
+            </p>
+        </section>
+
+        <section id="calendario" class="seccion-calendario">
+            <h3>Mi Calendario Escolar</h3>
+            <input type="date">
+        </section>
+
+        <section class="tres-columnas">
+
+            <!-- COLUMNA 1 -->
+            <article class="columna">
+                <h3>¿Qué es un reloj solar?</h3>
+
+                <p>
+                    Un reloj solar mide el tiempo utilizando la sombra producida por el Sol.
+                </p>
+            </article>
+
+            <!-- COLUMNA 2 -->
+            <article class="columna">
+
+                <h3>Reloj Solar Interactivo</h3>
+
+                <div class="solar-container">
+
+                    <svg id="relojSolar" width="300" height="300" viewBox="0 0 300 300">
+
+                        <circle cx="150" cy="150" r="120"
+                            fill="#f8f1d4"
+                            stroke="#333"
+                            stroke-width="4" />
+
+                        <text x="145" y="25">12</text>
+                        <text x="275" y="155">3</text>
+                        <text x="145" y="290">6</text>
+                        <text x="15" y="155">9</text>
+
+                        <!-- Gnomon -->
+                        <polygon points="150,150 140,120 160,120"
+                            fill="#444" />
+
+                        <!-- Sombra -->
+                        <line id="sombra"
+                            x1="150"
+                            y1="150"
+                            x2="150"
+                            y2="70"
+                            stroke="black"
+                            stroke-width="6"
+                            stroke-linecap="round" />
+
+                    </svg>
+
+                    <p id="anguloActual">
+                        Ángulo actual: 0°
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- COLUMNA 3 -->
+            <article class="columna">
+
+                <h3>Ejercicios de Trigonometría</h3>
+
+                <div class="ejercicio">
+                    <p>1. ¿Cuánto vale sen(30°)?</p>
+                    <button onclick="verificar(30)">0,5</button>
+                    <button onclick="incorrecto()">0,25</button>
+                    <button onclick="incorrecto()">1</button>
+                </div>
+
+                <div class="ejercicio">
+                    <p>2. ¿Cuánto vale cos(60°)?</p>
+                    <button onclick="verificar(60)">0,5</button>
+                    <button onclick="incorrecto()">0,75</button>
+                    <button onclick="incorrecto()">1</button>
+                </div>
+
+                <div class="ejercicio">
+                    <p>3. ¿Cuánto vale tan(45°)?</p>
+                    <button onclick="verificar(45)">1</button>
+                    <button onclick="incorrecto()">0,5</button>
+                    <button onclick="incorrecto()">2</button>
+                </div>
+
+                <div class="ejercicio">
+                    <p>4. Complemento de 30°</p>
+                    <button onclick="incorrecto()">30°</button>
+                    <button onclick="verificar(60)">60°</button>
+                    <button onclick="incorrecto()">90°</button>
+                </div>
+
+                <div class="ejercicio">
+                    <p>5. Suplemento de 120°</p>
+                    <button onclick="incorrecto()">30°</button>
+                    <button onclick="verificar(60)">60°</button>
+                    <button onclick="incorrecto()">90°</button>
+                </div>
+
+                <div class="ejercicio">
+                    <p>6. ¿Cuánto mide un ángulo recto?</p>
+                    <button onclick="incorrecto()">45°</button>
+                    <button onclick="verificar(90)">90°</button>
+                    <button onclick="incorrecto()">180°</button>
+                </div>
+
+                <p id="mensaje"></p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
